@@ -1,0 +1,34 @@
+{
+  "name": "patch-listener",
+  "description": "easily add/remove listener",
+  "version": "0.1.0",
+  "author": "sasa+1 <sasaplus1@gmail.com>",
+  "dependencies": {
+    "event-listener": "github:sasaplus1-prototype/event-listener.js",
+    "type-check": "github:sasaplus1-prototype/type-check.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "fixpack": "^2.3.1",
+    "webpack": "^2.2.1"
+  },
+  "license": "MIT",
+  "main": "./index.js",
+  "private": true,
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasaplus1-prototype/patch-listener.js.git"
+  },
+  "scripts": {
+    "build": "npm run compile && npm run minify",
+    "compile": "npm run webpack -- --output-filename ${npm_package_name}.js",
+    "develop": "npm run webpack -- --devtool inline-source-map --watch --output-filename ${npm_package_name}.js",
+    "eslint": "eslint",
+    "export": "git archive HEAD | tar x - -C",
+    "fixpack": "fixpack",
+    "lint": "npm run eslint -- .",
+    "minify": "NODE_ENV=production npm run webpack -- --optimize-minimize --output-filename ${npm_package_name}.min.js",
+    "webpack": "webpack --colors --display-error-details --progress"
+  }
+}
