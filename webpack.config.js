@@ -21,9 +21,13 @@ module.exports = function(env) {
       path: __dirname,
       filename: '[name].js',
       library: [
-        name.replace(/-[a-z]/g,
-          (s) => s.slice(1).toUpperCase()
-        ),
+        name
+          .replace(/-[a-z]/g,
+            (s) => s.slice(1).toUpperCase()
+          )
+          .replace(/^./,
+            (s) => s.toUpperCase()
+          ),
       ],
       libraryTarget: 'umd',
     },

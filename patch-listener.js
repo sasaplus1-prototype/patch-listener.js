@@ -8,9 +8,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["patchListener"] = factory();
+		exports["PatchListener"] = factory();
 	else
-		root["patchListener"] = factory();
+		root["PatchListener"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -184,15 +184,31 @@ var eventListener = __webpack_require__(0),
  * @param {boolean} capture
  */
 function PatchListener(element, eventName, callback, capture) {
-  var args;
+  var args = arguments,
+      params;
 
-  if (arguments.length === 1 && isObjectLike(element)) {
-    args = element;
+  if (!(this instanceof PatchListener)) {
+    switch (args.length) {
+      case 0:
+        return new PatchListener();
+      case 1:
+        return new PatchListener(args[0]);
+      case 2:
+        return new PatchListener(args[0], args[1]);
+      case 3:
+        return new PatchListener(args[0], args[1], args[2]);
+      default:
+        return new PatchListener(args[0], args[1], args[2], args[3]);
+    }
+  }
 
-    element = args.element;
-    eventName = args.eventName;
-    callback = args.callback;
-    capture = args.capture;
+  if (args.length === 1 && isObjectLike(element)) {
+    params = element;
+
+    element = params.element;
+    eventName = params.eventName;
+    callback = params.callback;
+    capture = params.capture;
   }
 
   this.element = element;
