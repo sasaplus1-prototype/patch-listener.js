@@ -62,6 +62,8 @@ PatchListener constructor
 
 - `element`
   - `Element|Object`
+- `element.element`
+  - `Element`
 - `element.eventName`
   - `string`
 - `element.callback`
