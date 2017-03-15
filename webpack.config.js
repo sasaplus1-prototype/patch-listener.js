@@ -48,7 +48,8 @@ module.exports = function(env) {
       new webpack.optimize.AggressiveMergingPlugin,
       new webpack.BannerPlugin({
         banner: [
-          '@license Copyright(c) 2017 sasa+1',
+          `@license ${name}.js ver.${version} Copyright(c) 2017 sasa+1`,
+          repository.url.replace(/\.git$/i, ''),
           'Released under the MIT license.',
         ].join('\n'),
         entryOnly: true,
