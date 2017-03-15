@@ -1,5 +1,6 @@
 /*!
- * @license Copyright(c) 2017 sasa+1
+ * @license patch-listener.js ver.0.1.2 Copyright(c) 2017 sasa+1
+ * https://github.com/sasaplus1-prototype/patch-listener.js
  * Released under the MIT license.
  */
 (function webpackUniversalModuleDefinition(root, factory) {
