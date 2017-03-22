@@ -77,7 +77,7 @@ PatchListener constructor
 - `capture`
   - `boolean`
 
-### PatchListener#off(element, eventName, callback, capture)
+### PatchListener#off([element[, eventName[, callback[, capture]]]])
 
 remove from EventListener
 
@@ -90,7 +90,7 @@ remove from EventListener
 - `capture`
   - `boolean`
 
-### PatchListener#on(element, eventName, callback, capture)
+### PatchListener#on([element[, eventName[, callback[, capture]]]])
 
 add to EventListener
 
